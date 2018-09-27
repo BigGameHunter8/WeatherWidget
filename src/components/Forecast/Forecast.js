@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
-import './Forecast.css';
+import styles from './Forecast.css';
 
 
-class Forecast extends Component {
-    
-
-  render() {
-    console.log(this.props.date);
-    
-    return (
-      <div className="Atmo">
-        <h1>{this.props.date}</h1>
-        <span>Minimal temperature is {this.props.low}℃ and maximum is {this.props.high}℃</span>
-        <div>Today will be {this.props.text}</div>
+const Forecast = (props) => {
+  return (
+    <div className={styles.atmoDiv}>
+        <h1>{props.date}</h1>
+        <span>Minimal temperature is {props.low}℃ and maximum is {props.high}℃</span>
+        <div className={styles.atmoDiv.bor}>Today will be {props.text}</div>
       </div>
-    );
-  }
-}
+  );
+};
 
 export default Forecast;
